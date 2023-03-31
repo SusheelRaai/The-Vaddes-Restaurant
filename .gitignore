@@ -1,4 +1,4 @@
-.sqlite
-.vsidx
-.lock
-.suo
+*.sqlite
+*.vsidx
+*.lock
+*.suo
