@@ -23,5 +23,6 @@ namespace TheVaddes.Data.IDAL
     int UserLogsDeatils(string username);
     List<UserLogModel> GetUserLogs();
     List<Postcodes> GetPostcodes(string code);
+    List<Address> GetAddress(string code);
   }
 }

@@ -25,10 +25,10 @@
         <td class="tbl2">£{{item.itemPrice}}</td>
         <td class="tbl2">
           <div class="input-group" style="justify-content: center;">
-            <i style="color: #1A6F76; align-self: center;" class="fa fa-minus-square" aria-hidden="true"
+            <i style="color: #1A6F76; align-self: center; cursor: pointer;" class="fa fa-minus-square" aria-hidden="true"
               (click)="removeItemCount(item.itemId)"></i>
             <p style="color: black; width: 1.5em; text-align: center;margin-top: 10px;">{{item.itemQty}}</p>
-            <i style="color: #1A6F76; align-self: center;" class="fa fa-plus-square" aria-hidden="true"
+            <i style="color: #1A6F76; align-self: center; cursor: pointer;" class="fa fa-plus-square" aria-hidden="true"
               (click)="addItemCount(item.itemId)"></i>
           </div>
         </td>
@@ -59,7 +59,7 @@
               <div style="margin-left:1em">Payment</div>
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <form [formGroup]="paymentForm" (ngSubmit)="onPayment()">
+          <form [formGroup]="paymentForm" (ngSubmit)="onPayment()" autocomplete="off">
             <table class="table table2">
               <tr>
                 <td><i class="fa fa-credit-card" aria-hidden="true"></i><label class="form-label">Card Number</label>
@@ -76,7 +76,6 @@
                     </div>
                   </div>
                 </td>
-                <td></td>
                 <td><img *ngIf="cardLogoDisplay" src="../../../assets/images/{{cardLogo}}" style="height: 50px;"></td>
               </tr>
               <tr>
@@ -89,7 +88,6 @@
                   </div>
                 </td>
                 <td></td>
-                <td></td>
               </tr>
               <tr>
                 <td><label class="form-label">CVV</label></td>
@@ -100,14 +98,13 @@
                   </div>
                 </td>
                 <td></td>
-                <td></td>
               </tr>
               <tr>
                 <td><label class="form-label">Postcode</label></td>
-                <td><input type="text" class="form-control" aria-label="State" (ngModelChange)="getPostCodes($event)" [matAutocomplete]="auto" formControlName="postcode"
-                  [ngClass]="{'is-invalid': pf['postcode'].touched && pf['postcode'].errors}" pattern="[A-Z0-9 ]">
+                <td><input type="text" class="form-control" aria-label="State" (ngModelChange)="getPostCodes($event)"  [matAutocomplete]="auto" formControlName="postcode"
+                  [ngClass]="{'is-invalid': pf['postcode'].touched && pf['postcode'].errors}">
                   <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option style="background-color: white;" *ngFor="let state of filteredpostcode | async" [value]="state.postcode">
+                    <mat-option style="background-color: white;" *ngFor="let state of filteredpostcode | async" [value]="state.postcode" (onSelectionChange)="getAddress(state.postcode)">
                       <span style="color: black;">{{state.postcode}}</span> 
                     </mat-option>
                   </mat-autocomplete>
@@ -115,17 +112,30 @@
                     <div *ngIf="pf['postcode'].errors['required']">Postcode is required</div>
                   </div>
                 </td>
-                <td></td>
-                <td></td>
+                <td>
+                </td>
               </tr>
               <tr>
                 <td><label class="form-label">Address</label></td>
-                <td><input type="text" formControlName="address" class="form-control"
+
+                <td><input mdInput type="text" class="form-control" aria-label="State" [matAutocomplete]="autoAddress" formControlName="address"
+                  [ngClass]="{'is-invalid': pf['address'].touched && pf['address'].errors}">
+                  <mat-autocomplete #autoAddress="matAutocomplete">
+                    <mat-option style="background-color: white;" *ngFor="let state of filteredaddress | async" [value]="state.address">
+                      <span style="color: black;">{{state.address}}</span> 
+                    </mat-option>
+                  </mat-autocomplete>
+                  <div *ngIf="pf['address'].errors && pf['address'].touched" class="invalid-feedback">
+                    <div *ngIf="pf['address'].errors['address']">address is required</div>
+                  </div>
+                </td>
+
+                <!--<td><input type="text" formControlName="address" class="form-control"
                     [ngClass]="{'is-invalid': pf['address'].touched && pf['address'].errors}">
                   <div *ngIf="pf['address'].errors && pf['address'].touched" class="invalid-feedback">
                     <div *ngIf="pf['address'].errors['required']">Address is required</div>
                   </div>
-                </td>
+                </td>-->
                <!-- <td><button style="border: 0ch;" (click)="cancel()" [disabled]="!paymentForm.valid"><i class="fa fa-times"
                   aria-hidden="true"></i></button></td>-->
             <td><button style="border: 0ch;" type="submit" [disabled]="!paymentForm.valid"><i class="fa fa-check"

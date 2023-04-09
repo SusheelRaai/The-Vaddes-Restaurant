@@ -62,6 +62,7 @@
     <Compile Include="DbConnection.cs" />
     <Compile Include="IDAL\IFoodItemsRepository.cs" />
     <Compile Include="IDAL\IUserRepository.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\FoodItemsModel.cs" />
     <Compile Include="Models\Postcodes.cs" />
     <Compile Include="Models\UserLogModel.cs" />
