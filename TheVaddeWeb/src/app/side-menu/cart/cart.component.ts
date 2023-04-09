@@ -51,7 +51,7 @@ export class CartComponent implements OnInit {
   public currentDate! : string;
   
   constructor(private formBuilder: FormBuilder, private datepipe: DatePipe, private _snackBar: MatSnackBar, private router: Router, private commonService: CommonService) {
-    this.currentDate = this.datepipe.transform((new Date), 'yyyy-MM-dd')||'';
+    this.currentDate = this.datepipe.transform((new Date), 'yyyy-MM')||'';
   }
 
   ngOnInit(): void {
@@ -155,10 +155,10 @@ export class CartComponent implements OnInit {
     }
   }
 
-  cancel() {
+  /*cancel() {
     this.paymentForm.reset()
     //this.googleMapDisplay = false;
-  }
+  }*/
 
   openSnackBar(message: string) {
     this._snackBar.open(message, 'OK');
@@ -206,6 +206,7 @@ export class CartComponent implements OnInit {
       var observable = this.commonService.Get('/User/GetPostcodes?code='+value);
       if (observable != undefined) {
         this.routes = observable.subscribe(data => {
+          debugger
           this.postcodesData = data;
           /*if(this.postcodesData.length==1){
             this.googleMap(this.postcodesData[0].latitude,this.postcodesData[0].longitude);
