@@ -379,3 +379,4 @@ D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\obj\Debug\TheVaddes.API.csproj.
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\obj\Debug\TheVaddes.API.csproj.CopyComplete
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\obj\Debug\TheVaddes.API.dll
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\obj\Debug\TheVaddes.API.pdb
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\bin\TheVaddes.Data.dll.config
