@@ -283,5 +283,32 @@ namespace TheVaddes.Data.DAL
       }
       return postcodesList;
     }
+
+
+    public List<Address> GetAddress(string code)
+    {
+      connection();
+      List<Address> addressList = new List<Address>();
+
+      SqlCommand cmd = new SqlCommand("GetAddress", con);
+      cmd.CommandType = CommandType.StoredProcedure;
+      cmd.Parameters.Add(new SqlParameter("@code", code));
+      SqlDataAdapter sd = new SqlDataAdapter(cmd);
+      DataTable dt = new DataTable();
+
+      con.Open();
+      sd.Fill(dt);
+      con.Close();
+      foreach (DataRow dr in dt.Rows)
+      {
+        addressList.Add(
+          new Address
+          {
+            postcode = Convert.ToString(dr["postcode"]),
+            address = Convert.ToString(dr["address"])
+          });
+      }
+      return addressList;
+    }
   }
 }

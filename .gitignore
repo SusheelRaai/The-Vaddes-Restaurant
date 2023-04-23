@@ -1,0 +1,7 @@
+*.sqlite
+*.vsidx
+*.lock
+*.suo
+*.dll
+*.pdb
+.vs/

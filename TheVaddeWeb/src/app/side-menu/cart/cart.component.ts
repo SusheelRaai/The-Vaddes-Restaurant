@@ -19,6 +19,11 @@ export interface PostCode {
   longitude: number;
 }
 
+export interface Address {
+  postcode: string;
+  address: string;
+}
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -36,7 +41,9 @@ export class CartComponent implements OnInit {
   @ViewChild('map') mapRef!: ElementRef;
   
   filteredpostcode!: Observable<PostCode[]>;
+  filteredaddress!: Observable<Address[]>;
   postcodesData!: any;
+  addressData!: any;
   public selectedItems: any;
   private routes!: Subscription;
   paymentForm!: FormGroup;
@@ -51,7 +58,7 @@ export class CartComponent implements OnInit {
   public currentDate! : string;
   
   constructor(private formBuilder: FormBuilder, private datepipe: DatePipe, private _snackBar: MatSnackBar, private router: Router, private commonService: CommonService) {
-    this.currentDate = this.datepipe.transform((new Date), 'yyyy-MM-dd')||'';
+    this.currentDate = this.datepipe.transform((new Date), 'yyyy-MM')||'';
   }
 
   ngOnInit(): void {
@@ -60,8 +67,8 @@ export class CartComponent implements OnInit {
         cardNumber: ['', Validators.required],
         expiryDate: ['', Validators.required],
         cvv: ['', Validators.required],
-        address:['',Validators.required],
-        postcode:['',Validators.required]
+        postcode:['',Validators.required],
+        address: ['', Validators.required],
       },
       {
         validator: luhnValidator("cardNumber")
@@ -73,6 +80,7 @@ export class CartComponent implements OnInit {
     }
    // this.googleMap();
     this.loginUser = localStorage.getItem('login') == null ? this.loginUser : JSON.parse(localStorage.getItem('login') || '{}')
+    this.paymentForm.controls['address'].disable()
   }
 
   get pf(): { [key: string]: AbstractControl } {
@@ -155,10 +163,10 @@ export class CartComponent implements OnInit {
     }
   }
 
-  cancel() {
+  /*cancel() {
     this.paymentForm.reset()
     //this.googleMapDisplay = false;
-  }
+  }*/
 
   openSnackBar(message: string) {
     this._snackBar.open(message, 'OK');
@@ -199,6 +207,12 @@ export class CartComponent implements OnInit {
     return this.postcodesData.filter((x: { postcode: string; }) => x.postcode.toLowerCase().includes(filterValue));
   }
 
+  public _filterAddress(value: string) : Address[] {
+    debugger;
+    const filterValue = value.toLowerCase();
+    return this.addressData.filter((x: { address: string; }) => x.address.toLowerCase().includes(filterValue));
+  }
+
   getPostCodes(value: string){
     debugger
     if(value!=null && value.length>4)
@@ -206,6 +220,7 @@ export class CartComponent implements OnInit {
       var observable = this.commonService.Get('/User/GetPostcodes?code='+value);
       if (observable != undefined) {
         this.routes = observable.subscribe(data => {
+          debugger
           this.postcodesData = data;
           /*if(this.postcodesData.length==1){
             this.googleMap(this.postcodesData[0].latitude,this.postcodesData[0].longitude);
@@ -214,6 +229,30 @@ export class CartComponent implements OnInit {
           this.filteredpostcode = this.pf['postcode'].valueChanges.pipe(
             startWith(''),
            map(UKpostcode => (UKpostcode ? this._filterPostcodes(UKpostcode) : this.postcodesData.slice())),
+          );
+        })
+      }
+    }
+  }
+
+
+  getAddress(code: string){
+    debugger
+    if(code!=null)
+    {
+      var observable = this.commonService.Get('/User/GetAddress?code='+code);
+      if (observable != undefined) {
+        this.routes = observable.subscribe(data => {
+          debugger
+          this.addressData = data;
+          this.addressData.length!=0?this.paymentForm.controls['address'].enable():this.paymentForm.controls['address'].disable()
+          /*if(this.postcodesData.length==1){
+            this.googleMap(this.postcodesData[0].latitude,this.postcodesData[0].longitude);
+            this.googleMapDisplay = true;
+          }*/
+          this.filteredaddress = this.pf['address'].valueChanges.pipe(
+            startWith(''),
+           map(UKAddress => (UKAddress ? this._filterAddress(UKAddress) : this.addressData.slice())),
           );
         })
       }

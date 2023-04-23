@@ -22,6 +22,7 @@ import { DatePipe } from '@angular/common';
 import { TextMaskModule } from 'angular2-text-mask';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     TextMaskModule,
     MatAutocompleteModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   exports:
   [FilterfoodComponent],

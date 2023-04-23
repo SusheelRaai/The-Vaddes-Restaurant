@@ -168,5 +168,21 @@ namespace TheVaddes.API.Controllers
         return BadRequest(ex.Message);
       }
     }
+
+
+    [HttpGet]
+    [Route("GetAddress")]
+    public IHttpActionResult GetAddress(string code)
+    {
+      try
+      {
+        var results = _user.GetAddress(code);
+        return Ok(results);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
   }
 }
