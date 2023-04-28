@@ -25,7 +25,7 @@ export class FilterfoodComponent implements OnInit {
   ngOnInit(): void {
     debugger;
     this.filteredItemsList = JSON.parse(localStorage.getItem('filterItemsList') || '{}');
-    localStorage.removeItem('SelectedfoodItem');
+    this.selectItemsList.forEach(x=>this.ItemCount(x.itemId))
   }
 
   /*getFilteredItems() {
@@ -35,7 +35,15 @@ export class FilterfoodComponent implements OnInit {
         this.filteredItemsList = this.filteredItemsList.filter((x: { itemType: string; }) => x.itemType == 'Dinner')
   }*/
 
+
+  ItemCount(itemid: number) {
+      let index = this.selectItemsList.findIndex(x => x.itemId === itemid)
+      let filterIndex = this.filteredItemsList.findIndex((fi:any)=>fi.itemId===itemid)
+      this.filteredItemsList[filterIndex].itemQty = this.selectItemsList[index].itemQty
+  }
+
   removeItemCount(itemid: number) {
+    debugger;
     this.filteredItemsList = this.filteredItemsList.map((foodItem: FoodItems) => {
       if (foodItem.itemId === itemid) {
         if (this.selectItemsList.find((x: { itemId: number; }) => x.itemId === itemid)) {

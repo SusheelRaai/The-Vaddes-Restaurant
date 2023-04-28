@@ -173,7 +173,6 @@ export class CartComponent implements OnInit {
   }
 
   addItemCount(itemid: number) {
-    
     this.selectedItems = this.selectedItems.map((fooditem: FoodItems) => {
       if (fooditem.itemId === itemid) {
         fooditem.itemQty = fooditem.itemQty + 1;
