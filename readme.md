@@ -1,3 +1,8 @@
+
+An online food ordering website developed using Angular and .Net Web API is a platform that allows customers to order food from their favorite restaurant(Vadde's) and have it delivered to their doorstep. The website is built using Angular, a popular front-end web development framework, and .Net Web API, a framework for building HTTP services. This combination of technologies allows for a fast, responsive, and user-friendly experience for customers. The website may also include features such as restaurant menus, customer reviews, and the ability to track orders in real-time.
+
+Skills: Programming · Angular Material · ASP.NET MVC · ASP.NET Web API
+
 ![image](https://github.com/SusheelRaai/The-Vaddes-Restaurant/assets/128976754/bcfc7b27-3a77-4803-87a4-efabd69addb0)
 
 ![image](https://github.com/SusheelRaai/The-Vaddes-Restaurant/assets/128976754/67b3bd0f-976b-4557-9573-f5073fb9c354)
