@@ -1,0 +1,17 @@
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\TheVaddes.Data.dll.config
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\TheVaddes.Data.dll
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\TheVaddes.Data.pdb
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\Newtonsoft.Json.dll
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\System.Net.Http.Formatting.dll
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\System.Web.Cors.dll
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\System.Web.Http.Cors.dll
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\System.Web.Http.dll
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\Newtonsoft.Json.xml
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\System.Net.Http.Formatting.xml
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\System.Web.Http.xml
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\bin\Release\System.Web.Http.Cors.xml
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.csproj.AssemblyReference.cache
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.csproj.CoreCompileInputs.cache
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.csproj.CopyComplete
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.dll
+D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.pdb

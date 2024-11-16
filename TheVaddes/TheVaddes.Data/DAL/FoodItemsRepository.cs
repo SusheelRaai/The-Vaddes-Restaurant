@@ -37,7 +37,8 @@ namespace TheVaddes.Data.DAL
                         itemImage = Convert.ToString(dr["itemImage"]),
                         itemDescription = Convert.ToString(dr["itemDescription"]),
                         itemReview = Convert.ToDecimal(dr["itemReview"]),
-                        itemQty = Convert.ToInt32(dr["itemQty"])
+                        itemQty = Convert.ToInt32(dr["itemQty"]),
+                        region = Convert.ToString(dr["region"])
                     });
             }
             return foodItemslist;

@@ -1,3 +1,7 @@
 mat-card {
     background-color: white;
 }
+
+div.format h2 {
+    font-size: 18px;
+}

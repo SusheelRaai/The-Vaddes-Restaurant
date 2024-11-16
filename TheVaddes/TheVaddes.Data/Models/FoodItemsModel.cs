@@ -16,6 +16,7 @@ namespace TheVaddes.Data.Models
         public string itemDescription   { get; set; }
         public decimal itemReview { get; set; }
         public int itemQty { get; set; }
+        public string region { get; set; }
 
     }
 }
