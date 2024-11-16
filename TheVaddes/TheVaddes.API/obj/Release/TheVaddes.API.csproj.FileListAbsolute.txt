@@ -96,3 +96,5 @@ D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\obj\Release\TheVaddes.API.cspro
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\obj\Release\TheVaddes.API.csproj.CopyComplete
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\obj\Release\TheVaddes.API.dll
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.API\obj\Release\TheVaddes.API.pdb
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.API\obj\Release\TheVaddes.API.csproj.AssemblyReference.cache
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.API\obj\Release\TheVaddes.API.csproj.CoreCompileInputs.cache

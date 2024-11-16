@@ -15,3 +15,13 @@ D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.csp
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.csproj.CopyComplete
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.dll
 D:\The Vaddes Restaurant\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.pdb
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\bin\Release\TheVaddes.Data.dll.config
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\bin\Release\TheVaddes.Data.dll
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\bin\Release\TheVaddes.Data.pdb
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\bin\Release\Newtonsoft.Json.dll
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\bin\Release\System.Net.Http.Formatting.dll
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.csproj.AssemblyReference.cache
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.csproj.CoreCompileInputs.cache
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.csproj.CopyComplete
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.dll
+D:\The Vaddes Restaurant\SusheelRaai\TheVacs\TheVaddes\TheVaddes.Data\obj\Release\TheVaddes.Data.pdb
